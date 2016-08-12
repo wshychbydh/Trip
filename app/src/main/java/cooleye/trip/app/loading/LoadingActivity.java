@@ -89,6 +89,6 @@ public class LoadingActivity extends PermissionActivity {
             public void onDismissed(Snackbar snackbar, int event) {
                 super.onDismissed(snackbar, event);
             }
-        }).setDuration(50000000).show();
+        }).setDuration(Snackbar.LENGTH_INDEFINITE).show();
     }
 }

@@ -124,13 +124,16 @@ public class RouteDialog extends Dialog implements AdapterView.OnItemClickListen
             }
         }
 
-        private String formatTime(int minute) {
-            long hour = minute / 60;
+        private String formatTime(int second) {
+            long minute = second / 60;
+            long hour = second / (60 * 60);
 
             if (hour > 0)
-                return hour + "小时" + minute % hour + "分钟";
-            else
+                return hour + "小时" + minute + "分钟";
+            else if (minute > 0)
                 return minute + "分钟";
+            else
+                return minute + "不足1分钟";
 
         }
 

@@ -27,7 +27,7 @@
     <string name="route_congestion_distance">拥堵距离：%1$s</string>
     <string name="route_light_num">红绿灯：%1$d个</string>
     <string name="route_duration">大概用时：%1$s</string>
-    <string name="route_km">%1$.2fkm</string>
+    <string name="route_km">%1$.3fkm</string>
     <string name="route_m">%1$dm</string>
     <string name="account_forget_password">忘记密码</string>
 
