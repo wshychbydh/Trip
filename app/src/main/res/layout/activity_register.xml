@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/title_layout"/>
+
+    <View
+        style="@style/divider_line_1px"
+        android:layout_marginTop="@dimen/padding_m"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:minHeight="44dp"
+        android:orientation="horizontal">
+
+        <cooleye.trip.app.component.ClearableEditText
+            android:id="@+id/phone_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_account"
+            android:drawablePadding="@dimen/padding_m"
+            android:hint="@string/account_phone_num_hint"
+            android:inputType="phone"
+            android:paddingLeft="@dimen/padding_m"
+            android:paddingRight="@dimen/padding_m"
+            app:clearIconClipParentPadding="true"
+            app:clearIconDivision="true"
+            app:clearIconDrawable="@drawable/icon_cancel"
+            app:clearIconGravity="right|center_vertical"
+            app:clearIconPadding="@dimen/padding_m"/>
+
+        <Button
+            android:id="@+id/get_captcha"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginRight="@dimen/padding_l"
+            android:enabled="false"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="@string/account_get_phone_check_num"
+            android:textSize="@dimen/text_size_xl"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_1px"/>
+
+    <EditText
+        android:id="@+id/captcha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:drawableLeft="@drawable/ic_captcha"
+        android:drawablePadding="@dimen/padding_m"
+        android:hint="@string/account_check_num_hint"
+        android:inputType="phone"
+        android:minHeight="44dp"
+        android:paddingLeft="@dimen/padding_m"
+        android:paddingRight="@dimen/padding_m"/>
+
+
+    <View style="@style/divider_line_1px"/>
+
+    <cooleye.trip.app.component.PasswordEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="@dimen/padding_m"
+        android:hint="@string/account_set_password_please"
+        android:inputType="textPassword"
+        android:minHeight="44dp"
+        android:paddingLeft="@dimen/padding_m"
+        android:paddingRight="@dimen/padding_m"
+        app:clipParentPadding="true"
+        app:division="true"
+        app:gravity="right|center_vertical"
+        app:hideDrawable="@drawable/ic_eye"
+        app:padding="@dimen/padding_m"
+        app:showDrawable="@drawable/ic_eye_on"/>
+
+    <View style="@style/divider_line_1px"/>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_xl"
+        android:layout_marginRight="@dimen/padding_xl"
+        android:layout_marginTop="40dp"
+        android:text="@string/account_register"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_xl"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_register_continue_agree"
+            android:textSize="@dimen/text_size_xl"/>
+
+        <TextView
+            android:id="@+id/register_clause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_register_clause"
+            android:textSize="@dimen/text_size_xl"/>
+    </LinearLayout>
+</LinearLayout>

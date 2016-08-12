@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Padding -->
+    <dimen name="padding_s">4dp</dimen>
+    <dimen name="padding_m">6dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="padding_l">10dp</dimen>
+    <dimen name="padding_xl">12dp</dimen>
+
+    <dimen name="margin">16dp</dimen>
+
+    <!-- TextSize -->
+    <dimen name="text_size_title_b">22dp</dimen>
+    <dimen name="text_size_title">20dp</dimen>
+    <dimen name="text_size_title_m">18dp</dimen>
+    <dimen name="text_size_xxl">16dp</dimen>
+    <dimen name="text_size_xl">14dp</dimen>
+    <dimen name="text_size_l">12dp</dimen>
+    <dimen name="text_size_m">10dp</dimen>
+    <dimen name="text_size_s">8dp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+</resources>

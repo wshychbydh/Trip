@@ -1,0 +1,80 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_head"
+            layout="@layout/title_layout"/>
+
+        <View
+            style="@style/divider_line_1px"
+            android:layout_marginTop="@dimen/padding_m"/>
+
+        <cooleye.trip.app.component.ClearableEditText
+            android:id="@+id/login_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_account"
+            android:drawablePadding="@dimen/padding_m"
+            android:hint="@string/account_phone_num_hint"
+            android:inputType="phone"
+            android:padding="@dimen/padding"
+            app:clearIconClipParentPadding="true"
+            app:clearIconDivision="true"
+            app:clearIconDrawable="@drawable/icon_cancel"
+            app:clearIconGravity="right|center_vertical"
+            app:clearIconPadding="@dimen/padding_m"/>
+
+        <View style="@style/divider_line_1px"/>
+
+        <cooleye.trip.app.component.PasswordEditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="@dimen/padding_m"
+            android:hint="@string/account_password_hint"
+            android:inputType="textPassword"
+            android:minHeight="44dp"
+            android:paddingLeft="@dimen/padding_m"
+            android:paddingRight="@dimen/padding_m"
+            app:clipParentPadding="true"
+            app:division="true"
+            app:gravity="right|center_vertical"
+            app:hideDrawable="@drawable/ic_eye"
+            app:padding="@dimen/padding_m"
+            app:showDrawable="@drawable/ic_eye_on"/>
+
+        <View style="@style/divider_line_1px"/>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_layout"
+            android:layout_marginLeft="@dimen/padding_xl"
+            android:layout_marginRight="@dimen/padding_xl"
+            android:layout_marginTop="40dp"
+            android:text="@string/account_login"/>
+
+        <TextView
+            android:id="@+id/login_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/padding_xl"
+            android:text="@string/account_forget_password"
+            android:textSize="@dimen/text_size_xl"/>
+
+    </LinearLayout>
+</ScrollView>

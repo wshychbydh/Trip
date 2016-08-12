@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Trip</string>
+
+    <!--account-->
+    <string name="account_phone_num_hint">请输入手机号</string>
+    <string name="account_password_hint">请输入密码</string>
+    <string name="account_get_phone_check_num">发送验证码</string>
+    <string name="account_phone_num_not_avalid">请确认您输入的是有效的手机号码</string>
+    <string name="account_check_num_hint">请输入验证码</string>
+    <string name="account_please_input_check_num">请输入6位验证码</string>
+    <string name="account_captcha_valid">请确认验证码长度6以上</string>
+    <string name="account_get_captcha_left_time">%1$d秒后重试</string>
+    <string name="account_getaptcha_success">获取成功,验证码已通过短信的形式发送到您的手机上.</string>
+    <string name="account_getcaptch_failed">获取验证码失败,请稍后重试.</string>
+    <string name="account_register_continue_agree">继续注册表示同意</string>
+    <string name="account_register_clause">《注册条款》</string>
+    <string name="account_password_6_14">请输入6-14位的密码</string>
+    <string name="account_set_password_please">请设置密码</string>
+    <string name="account_set_password">设置密码</string>
+    <string name="account_set_password_login">设置密码并登录</string>
+    <string name="account_register">注册</string>
+    <string name="account_login">登陆</string>
+
+    <!--route-->
+    <string name="route_name">路线%1$d</string>
+    <string name="route_distance">距离：%1$s</string>
+    <string name="route_congestion_distance">拥堵距离：%1$s</string>
+    <string name="route_light_num">红绿灯：%1$d个</string>
+    <string name="route_duration">大概用时：%1$s</string>
+    <string name="route_km">%1$.2fkm</string>
+    <string name="route_m">%1$dm</string>
+    <string name="account_forget_password">忘记密码</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
