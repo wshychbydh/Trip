@@ -1,4 +1,4 @@
-package cooleye.trip.encode;
+package cooleye.trip.scan;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import java.io.File;
 
+import cooleye.scan.encode.QRCodeUtil;
 import cooleye.trip.R;
 import cooleye.trip.app.base.BaseActivity;
 

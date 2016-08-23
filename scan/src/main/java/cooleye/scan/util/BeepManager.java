@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cooleye.scan;
+package cooleye.scan.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,6 +27,8 @@ import android.util.Log;
 import java.io.Closeable;
 import java.io.IOException;
 
+import cooleye.scan.R;
+
 public final class BeepManager implements
         MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, Closeable {
 
@@ -38,7 +40,6 @@ public final class BeepManager implements
     private final Activity activity;
     private MediaPlayer mediaPlayer;
     private boolean playBeep;
-    private boolean vibrate;
 
     public BeepManager(Activity activity) {
         this.activity = activity;
@@ -58,7 +59,6 @@ public final class BeepManager implements
 
     public synchronized void updatePrefs() {
         playBeep = shouldBeep(activity);
-        vibrate = false;
         if (playBeep && mediaPlayer == null) {
             // The volume on STREAM_SYSTEM is not adjustable, and users found it too loud,
             // so we now play on the music stream.
@@ -71,10 +71,8 @@ public final class BeepManager implements
         if (playBeep && mediaPlayer != null) {
             mediaPlayer.start();
         }
-        if (vibrate) {
-            Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
-            vibrator.vibrate(VIBRATE_DURATION);
-        }
+        Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(VIBRATE_DURATION);
     }
 
     private MediaPlayer buildMediaPlayer(Context activity) {
@@ -85,7 +83,8 @@ public final class BeepManager implements
         try {
             AssetFileDescriptor file = activity.getResources().openRawResourceFd(R.raw.beep);
             try {
-                mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
+                mediaPlayer.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file
+                        .getLength());
             } finally {
                 file.close();
             }

@@ -1,4 +1,4 @@
-package cooleye.trip.encode;
+package cooleye.scan.encode;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

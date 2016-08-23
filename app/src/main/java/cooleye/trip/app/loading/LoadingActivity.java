@@ -17,6 +17,7 @@ import cooleye.trip.R;
 import cooleye.trip.app.home.HomeActivity;
 import cooleye.trip.map.LocationHelper;
 import cooleye.trip.map.RoutePlanHelper;
+import cooleye.trip.scan.CaptureMainActivity;
 import cooleye.trip.server.BiuLoginRequestInfo;
 import cooleye.trip.server.Host;
 import cooleye.trip.server.LoginService;
@@ -41,6 +42,16 @@ public class LoadingActivity extends PermissionActivity {
 
     public void onHome(View v) {
         startActivity(new Intent(this, HomeActivity.class));
+        finish();
+    }
+
+    public void onScan(View v) {
+        startActivity(new Intent(this, CaptureMainActivity.class));
+        finish();
+    }
+
+    public void onEncode(View v) {
+        startActivity(new Intent(this, CaptureMainActivity.class));
         finish();
     }
 

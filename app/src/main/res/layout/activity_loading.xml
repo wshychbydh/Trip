@@ -26,9 +26,22 @@
         android:layout_height="wrap_content"
         android:onClick="onHome"
         android:text="进入主页"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSnackbarClick"
         android:text="SnackBar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onScan"
+        android:text="扫码"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onEncode"
+        android:text="生成二维码"/>
 </LinearLayout>
