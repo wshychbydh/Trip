@@ -53,7 +53,6 @@ public class LocationHelper implements BDLocationListener {
         mApplication.mLocationService.setLocationOption(option);
         // 定位SDK
         mApplication.mLocationService.start();
-
     }
 
     public void onStop() {

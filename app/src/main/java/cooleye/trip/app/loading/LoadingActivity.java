@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 
-import com.baidu.mapapi.search.route.DrivingRouteLine;
-
 import cooleye.permission.PermissionActivity;
 import cooleye.service.Utils.HttpFactory;
 import cooleye.service.download.AppUpdate;
@@ -15,6 +13,8 @@ import cooleye.service.subscribers.ResponseListener;
 import cooleye.service.subscribers.ResponseSubscriber;
 import cooleye.trip.R;
 import cooleye.trip.app.home.HomeActivity;
+import cooleye.trip.app.routeplan.RoutePlanActivity;
+import cooleye.trip.app.routeplan.SearchActivity;
 import cooleye.trip.map.LocationHelper;
 import cooleye.trip.map.RoutePlanHelper;
 import cooleye.trip.scan.CaptureMainActivity;
@@ -37,7 +37,7 @@ public class LoadingActivity extends PermissionActivity {
     }
 
     public void onSearch(View v) {
-        routePlan();
+        startActivity(new Intent(this, SearchActivity.class));
     }
 
     public void onHome(View v) {
@@ -61,16 +61,6 @@ public class LoadingActivity extends PermissionActivity {
 
     private void location() {
         LocationHelper.get(this).onStart();
-    }
-
-    private void routePlan() {
-        RoutePlanHelper.get(this).setOnRoutePlanListener(new RoutePlanHelper.OnRoutePlanListener() {
-            @Override
-            public void onRoutePlaned(DrivingRouteLine routeLine) {
-                ToastUtil.show(LoadingActivity.this, RoutePlanHelper.get(LoadingActivity.this)
-                        .composePrint(routeLine));
-            }
-        }).drivePlan("成都", "火车南", "天府新");
     }
 
     public void login(Object tag,
@@ -101,5 +91,9 @@ public class LoadingActivity extends PermissionActivity {
                 super.onDismissed(snackbar, event);
             }
         }).setDuration(Snackbar.LENGTH_INDEFINITE).show();
+    }
+
+    public void onRoutePlan(View view) {
+        startActivity(new Intent(this, RoutePlanActivity.class));
     }
 }

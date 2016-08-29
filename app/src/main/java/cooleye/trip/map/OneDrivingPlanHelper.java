@@ -24,30 +24,30 @@ import cooleye.utils.utils.ToastUtil;
  * 此demo用来展示如何进行驾车、步行、公交路线搜索并在地图使用RouteOverlay、TransitOverlay绘制
  * 同时展示如何进行节点浏览并弹出泡泡
  */
-public class RoutePlanHelper implements OnGetRoutePlanResultListener {
+public class OneDrivingPlanHelper implements OnGetRoutePlanResultListener {
 
-    private static RoutePlanHelper sInstance;
+    private static OneDrivingPlanHelper sInstance;
     private Activity mActivity;
     // 搜索相关
     private RoutePlanSearch mSearch = null;    // 搜索模块，也可去掉地图模块独立使用
 
     private OnRoutePlanListener mOnRoutePlanListener;
 
-    private RoutePlanHelper(Activity activity) {
+    private OneDrivingPlanHelper(Activity activity) {
         this.mActivity = activity;
         // 初始化搜索模块，注册事件监听
         mSearch = RoutePlanSearch.newInstance();
         mSearch.setOnGetRoutePlanResultListener(this);
     }
 
-    public static RoutePlanHelper get(Activity activity) {
+    public static OneDrivingPlanHelper get(Activity activity) {
         if (sInstance == null) {
-            sInstance = new RoutePlanHelper(activity);
+            sInstance = new OneDrivingPlanHelper(activity);
         }
         return sInstance;
     }
 
-    public RoutePlanHelper setOnRoutePlanListener(OnRoutePlanListener onRoutePlanListener) {
+    public OneDrivingPlanHelper setOnRoutePlanListener(OnRoutePlanListener onRoutePlanListener) {
         mOnRoutePlanListener = onRoutePlanListener;
         return this;
     }
@@ -63,7 +63,7 @@ public class RoutePlanHelper implements OnGetRoutePlanResultListener {
         // 实际使用中请对起点终点城市进行正确的设定
         mSearch.drivingSearch((new DrivingRoutePlanOption())
                 .from(stNode).to(enNode));
-        ToastUtil.show(mActivity,"路线规划中...");
+        ToastUtil.show(mActivity, "路线规划中...");
     }
 
     @Override
@@ -89,17 +89,9 @@ public class RoutePlanHelper implements OnGetRoutePlanResultListener {
             return;
         }
         if (result.error == SearchResult.ERRORNO.NO_ERROR) {
-            if (result.getRouteLines().size() > 1) {
-                new RouteDialog(mActivity)
-                        .setOnRoutePlanListener(mOnRoutePlanListener)
-                        .setData(result.getRouteLines())
-                        .show();
-            } else {
-                if (mOnRoutePlanListener != null) {
-                    mOnRoutePlanListener.onRoutePlaned(result.getRouteLines().get(0));
-                }
+            if (mOnRoutePlanListener != null) {
+                mOnRoutePlanListener.onRoutePlaned(result.getRouteLines().get(0));
             }
-
             printAll(result);
         }
     }
@@ -119,8 +111,8 @@ public class RoutePlanHelper implements OnGetRoutePlanResultListener {
         sb.append("拥堵距离 ： " + routeLine.getCongestionDistance() + "米").append("\n");
         sb.append("红绿灯 ： " + routeLine.getLightNum() + "个").append("\n");
         sb.append("距离 ： " + routeLine.getDistance() / 1000d + "km").append("\n");
-        sb.append("预计用时 ： " + routeLine.getDuration() / 60d + "分").append("\n");
-        sb.append("*****************************************");
+        sb.append("用时 ： " + routeLine.getDuration() / 60d + "分").append("\n");
+        sb.append("************************×××××××××××××××××××××××××××××××*");
         return sb.toString();
     }
 

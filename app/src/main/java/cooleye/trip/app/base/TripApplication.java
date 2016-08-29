@@ -18,10 +18,10 @@ public class TripApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        SDKInitializer.initialize(getApplicationContext());
         /***
          * 初始化定位sdk，建议在Application中创建
          */
         mLocationService = new LocationService(getApplicationContext());
-        SDKInitializer.initialize(getApplicationContext());
     }
 }
